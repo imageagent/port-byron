@@ -1,11 +1,16 @@
 extends layouts/default
 block content
 
-  .masthead
-    .container
-      .row
-        .col-xs-12.text-center
-          h1 Standard Static Website Template
-          p.lead Use this document as a way to quickly start any new project.<br>All you get is this text and a mostly barebones HTML document.
+  include includes/masthead.jade
+  include includes/navigation.jade
 
-    
+  .container-fluid
+    #main-content.row
+      .col-sm-8.col-sm-push-4.col-md-6.col-md-push-3
+        include includes/main-content.jade
+      .col-sm-4.col-sm-pull-8.col-md-3.col-md-pull-6
+        .sidebar.sidebar-left
+          include includes/sidebar-left.jade
+      .col-sm-12.col-md-3
+        .sidebar.sidebar-right
+          include includes/sidebar-right.jade
